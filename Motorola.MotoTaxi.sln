@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Motorola.MotoTaxi.Orders.IS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Orders.Api", "Motorola.MotoTaxi.Orders.Api\Motorola.MotoTaxi.Orders.Api.csproj", "{226A8719-C845-437C-A190-98149847AA83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Orders.FakeServices", "Motorola.MotoTaxi.Orders.FakeServices\Motorola.MotoTaxi.Orders.FakeServices.csproj", "{3092920C-9540-4600-99CA-65272C05A7E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{226A8719-C845-437C-A190-98149847AA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{226A8719-C845-437C-A190-98149847AA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{226A8719-C845-437C-A190-98149847AA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3092920C-9540-4600-99CA-65272C05A7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3092920C-9540-4600-99CA-65272C05A7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3092920C-9540-4600-99CA-65272C05A7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3092920C-9540-4600-99CA-65272C05A7E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
