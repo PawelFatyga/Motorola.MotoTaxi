@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Motorola.MotoTaxi.Orders.DbServices;
 using Motorola.MotoTaxi.Orders.FakeServices;
 using Motorola.MotoTaxi.Orders.IServices;
 
@@ -27,8 +29,14 @@ namespace Motorola.MotoTaxi.Orders.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IOrderService, FakeOrderService>();
-            services.AddSingleton<OrderFaker>();
+            //services.AddSingleton<IOrderService, FakeOrderService>();
+            services.AddScoped<IOrderService, DbOrderService>();
+            //services.AddSingleton<OrderFaker>();
+
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=OrdersDb;Integrated Security=True";
+
+            // add package Microsoft.EntityFrameworkCore.SqlServer
+            services.AddDbContext<OrdersContext>(options => options.UseSqlServer(connectionString));
 
             //add package Microsoft.Aspnetcore.mvc.formatters.xml 2.1.1
             services

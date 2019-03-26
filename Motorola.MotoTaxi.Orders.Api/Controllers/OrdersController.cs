@@ -42,6 +42,12 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         public IActionResult Get(int id)
         {
             Order order = orderService.Get(id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
             return Ok(order);
             //return Ok($"Hello {id}");
         }
@@ -51,7 +57,7 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         {
             orderService.Add(order);
 
-            return Ok();
+            return CreatedAtRoute( new { id = order.Id }, order);
         }
     }
 }
