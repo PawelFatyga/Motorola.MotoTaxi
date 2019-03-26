@@ -33,7 +33,9 @@ namespace Motorola.MotoTaxi.Orders.Api
             services.AddScoped<IOrderService, DbOrderService>();
             //services.AddSingleton<OrderFaker>();
 
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=OrdersDb;Integrated Security=True";
+            string connectionString = Configuration.GetConnectionString("OrdersConnection");
+
+            var count = Configuration["OrdersCount"];
 
             // add package Microsoft.EntityFrameworkCore.SqlServer
             services.AddDbContext<OrdersContext>(options => options.UseSqlServer(connectionString));

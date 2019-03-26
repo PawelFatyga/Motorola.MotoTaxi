@@ -14,6 +14,13 @@ namespace Motorola.MotoTaxi.Orders.DbServices
             : base(options)
         {
             this.Database.EnsureCreated();
+
+            //wylacza sledzenie podczas pobierania obiektow (globalnie)
+            //this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+
+            // automatycznie wykrywanie stanu podczas zmiany stanu obiektu
+            //this.ChangeTracker.AutoDetectChangesEnabled = false;
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

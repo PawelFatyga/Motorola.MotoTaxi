@@ -45,7 +45,7 @@ namespace Motorola.MotoTaxi.Orders.DbServices
 
         public IEnumerable<Order> Get()
         {
-            return context.Orders.ToList();
+            return context.Orders.AsNoTracking().ToList();
         }
 
         public void Start(int id, Location start)
