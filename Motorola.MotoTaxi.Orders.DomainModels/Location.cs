@@ -3,6 +3,6 @@
     public struct Location
     {
         public double Latitude { get; set; }
-        public int Longitude { get; set; }
+        public double Longitude { get; set; }
     }
 }

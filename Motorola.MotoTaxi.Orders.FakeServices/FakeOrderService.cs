@@ -10,9 +10,9 @@ namespace Motorola.MotoTaxi.Orders.FakeServices
     {
         private IList<Order> orders;
 
-        public FakeOrderService()
+        public FakeOrderService(OrderFaker orderFaker)
         {
-            orders = new List<Order>();
+            orders = orderFaker.Generate(100);
         }
 
         public void Add(Order entity)
@@ -38,6 +38,11 @@ namespace Motorola.MotoTaxi.Orders.FakeServices
         public Order Get(int id)
         {
             return orders.SingleOrDefault(p => p.Id == id);
+        }
+
+        public IEnumerable<Order>GetAll(int id)
+        {
+            return orders;
         }
 
         public void Start(int id, Location start)

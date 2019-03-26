@@ -21,6 +21,7 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            
             return Ok("Hello Orders");
         }
 
@@ -37,7 +38,8 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         public IActionResult Get(int id)
         {
             Order order = orderService.Get(id);
-            return Ok($"Hello {id}");
+            return Ok(order);
+            //return Ok($"Hello {id}");
         }
 
         [HttpPost]
