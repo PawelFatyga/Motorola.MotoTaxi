@@ -21,15 +21,19 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            
-            return Ok("Hello Orders");
+
+            //return Ok("Hello Orders");
+            var list = orderService.Get();
+            return Ok(list);
         }
 
         [HttpGet]
         [Route("{number}")]
         public IActionResult Get(string name)
         {
-            return Ok($"Hello {name}");
+            var list = orderService.Get();
+            return Ok(list);
+            //return Ok($"Hello {name}");
         }
 
         // api/orders/100
@@ -43,7 +47,7 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Order order)
+        public IActionResult Post([FromBody] Order order)
         {
             orderService.Add(order);
 

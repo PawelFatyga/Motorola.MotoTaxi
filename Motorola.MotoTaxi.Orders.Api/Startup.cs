@@ -29,7 +29,12 @@ namespace Motorola.MotoTaxi.Orders.Api
         {
             services.AddSingleton<IOrderService, FakeOrderService>();
             services.AddSingleton<OrderFaker>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //add package Microsoft.Aspnetcore.mvc.formatters.xml 2.1.1
+            services
+                .AddMvc(options=>options.RespectBrowserAcceptHeader=true)
+                .AddXmlSerializerFormatters()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

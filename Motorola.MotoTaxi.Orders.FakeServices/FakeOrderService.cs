@@ -40,6 +40,11 @@ namespace Motorola.MotoTaxi.Orders.FakeServices
             return orders.SingleOrDefault(p => p.Id == id);
         }
 
+        public IEnumerable<Order> Get()
+        {
+            return orders;
+        }
+
         public IEnumerable<Order>GetAll(int id)
         {
             return orders;
