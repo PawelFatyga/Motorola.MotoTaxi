@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Motorola.MotoTaxi.Orders.FakeServices;
+using Motorola.MotoTaxi.Orders.IServices;
 
 namespace Motorola.MotoTaxi.Orders.Api
 {
@@ -25,6 +27,7 @@ namespace Motorola.MotoTaxi.Orders.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IOrderService, FakeOrderService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

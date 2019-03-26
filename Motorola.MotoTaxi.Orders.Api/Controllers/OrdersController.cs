@@ -11,7 +11,6 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
     [Route("api/[controller]")]
     public class OrdersController : ControllerBase
     {
-
         private readonly IOrderService orderService;
 
         public OrdersController(IOrderService orderService)
@@ -25,14 +24,12 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
             return Ok("Hello Orders");
         }
 
-
         [HttpGet]
         [Route("{number}")]
-        public IActionResult Get(string number)
+        public IActionResult Get(string name)
         {
-            return Ok($"Hello {number}");
+            return Ok($"Hello {name}");
         }
-
 
         // api/orders/100
         [HttpGet]
@@ -43,6 +40,12 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
             return Ok($"Hello {id}");
         }
 
+        [HttpPost]
+        public IActionResult Post(Order order)
+        {
+            orderService.Add(order);
 
+            return Ok();
+        }
     }
 }
