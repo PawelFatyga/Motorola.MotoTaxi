@@ -36,6 +36,7 @@ namespace Motorola.MotoTaxi.Orders.Api
             string connectionString = Configuration.GetConnectionString("OrdersConnection");
 
             var count = Configuration["OrdersCount"];
+            var user = Configuration["User:Login"];
 
             // add package Microsoft.EntityFrameworkCore.SqlServer
             services.AddDbContext<OrdersContext>(options => options.UseSqlServer(connectionString));
