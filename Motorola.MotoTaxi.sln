@@ -15,6 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Orders.Db
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.RedisDemo", "Motorola.RedisDemo\Motorola.RedisDemo.csproj", "{FB3D6D1E-81D4-4781-9121-22536A41991B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.Api", "Motorola.MotoTaxi.Locations.Api\Motorola.MotoTaxi.Locations.Api.csproj", "{56214E3D-2645-4580-AB2F-3E48530E6A70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.DomainModels", "Motorola.MotoTaxi.Locations.DomainModels\Motorola.MotoTaxi.Locations.DomainModels.csproj", "{1916C7BF-1452-4469-83BD-E97D87BE9D18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.DbServices", "Motorola.MotoTaxi.Locations.DbServices\Motorola.MotoTaxi.Locations.DbServices.csproj", "{8AD51B58-9312-436F-9F78-BF1E719090E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.IServices", "Motorola.MotoTaxi.Locations.IServices\Motorola.MotoTaxi.Locations.IServices.csproj", "{7595A5BC-69C4-4357-BE71-2AB0569748C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +53,22 @@ Global
 		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56214E3D-2645-4580-AB2F-3E48530E6A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56214E3D-2645-4580-AB2F-3E48530E6A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56214E3D-2645-4580-AB2F-3E48530E6A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56214E3D-2645-4580-AB2F-3E48530E6A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1916C7BF-1452-4469-83BD-E97D87BE9D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1916C7BF-1452-4469-83BD-E97D87BE9D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1916C7BF-1452-4469-83BD-E97D87BE9D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1916C7BF-1452-4469-83BD-E97D87BE9D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD51B58-9312-436F-9F78-BF1E719090E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD51B58-9312-436F-9F78-BF1E719090E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD51B58-9312-436F-9F78-BF1E719090E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD51B58-9312-436F-9F78-BF1E719090E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7595A5BC-69C4-4357-BE71-2AB0569748C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7595A5BC-69C4-4357-BE71-2AB0569748C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7595A5BC-69C4-4357-BE71-2AB0569748C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7595A5BC-69C4-4357-BE71-2AB0569748C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
