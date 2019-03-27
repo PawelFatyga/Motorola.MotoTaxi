@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Orders.Fa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Orders.DbServices", "Motorola.MotoTaxi.Orders.DbServices\Motorola.MotoTaxi.Orders.DbServices.csproj", "{07D5FC32-9DA5-47B9-BA01-FC895F2FE63D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.RedisDemo", "Motorola.RedisDemo\Motorola.RedisDemo.csproj", "{FB3D6D1E-81D4-4781-9121-22536A41991B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{07D5FC32-9DA5-47B9-BA01-FC895F2FE63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07D5FC32-9DA5-47B9-BA01-FC895F2FE63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07D5FC32-9DA5-47B9-BA01-FC895F2FE63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3D6D1E-81D4-4781-9121-22536A41991B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
