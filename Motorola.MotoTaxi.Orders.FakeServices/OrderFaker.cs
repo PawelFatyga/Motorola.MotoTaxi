@@ -12,7 +12,7 @@ namespace Motorola.MotoTaxi.Orders.FakeServices
         public OrderFaker()
         {
             StrictMode(true);
-            RuleFor(p => p.Id, f => f.IndexFaker);
+            RuleFor(p => p.Id, f => f.Random.Int(0,10000));
             RuleFor(p => p.OrderDate, f => f.Date.Between(DateTime.Parse("2019-03-25"), DateTime.Parse("2019-03-29")));
             RuleFor(p => p.Status, f => f.PickRandom<OrderStatus>());
             //RuleFor(p => p.Start.Latitude, f => f.Address.Latitude(53,55));
