@@ -3,31 +3,51 @@ using Motorola.MotoTaxi.Locations.IServices;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Motorola.MotoTaxi.Locations.DbServices
 {
     public class DbLocationService : ILocationService
     {
-        private readonly ConnectionMultiplexer redis;
-
-        public DbLocationService(ConnectionMultiplexer redis)
-        {
-            this.redis = redis;
-        }
-
+        
         public IEnumerable<Vehicle> Get(Location location)
         {
-            throw new NotImplementedException();
+            List<Vehicle> vehiclelist;
+            using (ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost"))
+
+            {
+                IDatabase db = redis.GetDatabase();
+                string key = "locations";
+
+                var results = db.GeoRadius(key, location.Longitude, location.Latitude, 20, GeoUnit.Kilometers, 50, Order.Ascending, GeoRadiusOptions.WithCoordinates|GeoRadiusOptions.WithDistance);
+
+                vehiclelist = results.Select(x => new Vehicle(x.Member, new Location { Latitude = x.Position.Value.Latitude, Longitude = x.Position.Value.Longitude })).ToList();
+            }
+
+            return vehiclelist;
         }
 
         public Location Get(string vehicleName)
         {
-            throw new NotImplementedException();
+            using (ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost"))
+            {
+                IDatabase db = redis.GetDatabase();
+                string key = "locations";
+                
+                return new Location { Latitude = db.GeoPosition(key, vehicleName).Value.Latitude, Longitude = db.GeoPosition(key, vehicleName).Value.Longitude };
+            }
         }
 
         public void Update(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+
+            using (ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost"))
+            {
+                IDatabase db = redis.GetDatabase();
+                string key = "locations";
+
+                db.GeoAdd(key, vehicle.location.Longitude, vehicle.location.Latitude, vehicle.Name);
+            }
         }
     }
 }

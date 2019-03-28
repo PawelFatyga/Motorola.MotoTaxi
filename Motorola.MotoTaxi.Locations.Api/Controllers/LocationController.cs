@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Motorola.MotoTaxi.Locations.DomainModels;
 using Motorola.MotoTaxi.Locations.IServices;
 
 namespace Motorola.MotoTaxi.Locations.Api.Controllers
@@ -20,37 +21,35 @@ namespace Motorola.MotoTaxi.Locations.Api.Controllers
         }
 
 
-        // GET api/location
+        // GET api/location?latitude=50.5&longitude=19.9   -> ul pilsudskiego
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<string>> Get([FromQuery] Location location)
         {
-            return new string[] { "value1", "value2" };
+            var list = locationService.Get(location); 
+
+            return Ok(list);
         }
 
-        // GET api/location/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        // GET api/location/name
+        [HttpGet("{name}")]
+        public ActionResult<Location> Get(string name)
         {
-            return "value";
+            return Ok(locationService.Get(name));
         }
 
         // POST api/location
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Vehicle car)
         {
-
-
-
-
-            //orderService.Add(order);
-
-            //return CreatedAtRoute(new { id = order.Id }, order);
+            locationService.Update(car);
         }
 
         // PUT api/location/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Vehicle vehicle)
         {
+            locationService.Update(vehicle);
         }
 
         // DELETE api/values/5
