@@ -13,7 +13,7 @@ namespace Motorola.MotoTaxi.ConsoleClient
         static void Main(string[] args)
         {
 
-            //Task.Run(() => GetOrdersTest());
+            
             Task.Run(() => AddOrderTest());
             
 
@@ -52,8 +52,6 @@ namespace Motorola.MotoTaxi.ConsoleClient
                 {
                     //add package Microsoft.aspnet.WebApi.Client
                     var content = response.Content.ReadAsAsync<IEnumerable<Vehicle>>().Result;
-
-                    
 
                 }
             }

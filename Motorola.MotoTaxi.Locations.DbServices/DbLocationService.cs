@@ -19,7 +19,7 @@ namespace Motorola.MotoTaxi.Locations.DbServices
                 IDatabase db = redis.GetDatabase();
                 string key = "locations";
 
-                var results = db.GeoRadius(key, location.Longitude, location.Latitude, 20, GeoUnit.Kilometers, 50, Order.Ascending, GeoRadiusOptions.WithCoordinates|GeoRadiusOptions.WithDistance);
+                var results = db.GeoRadius(key, location.Longitude, location.Latitude, 40, GeoUnit.Kilometers, 50, Order.Ascending, GeoRadiusOptions.WithCoordinates|GeoRadiusOptions.WithDistance);
 
                 vehiclelist = results.Select(x => new Vehicle(x.Member, new Location { Latitude = x.Position.Value.Latitude, Longitude = x.Position.Value.Longitude })).ToList();
             }

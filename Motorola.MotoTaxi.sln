@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Motorola.MotoTaxi.Locations
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.ConsoleClient", "Motorola.MotoTaxi.ConsoleClient\Motorola.MotoTaxi.ConsoleClient.csproj", "{BD713EA1-F760-4151-9B73-981FB9E7D250}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.Client", "Motorola.MotoTaxi.Locations.Client\Motorola.MotoTaxi.Locations.Client.csproj", "{26098384-D758-4663-8417-DA1D0EEBFF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations.Driver", "Motorola.MotoTaxi.Locations.Driver\Motorola.MotoTaxi.Locations.Driver.csproj", "{CDC674D7-48DD-471D-904F-505D3C3DCB08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{BD713EA1-F760-4151-9B73-981FB9E7D250}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD713EA1-F760-4151-9B73-981FB9E7D250}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD713EA1-F760-4151-9B73-981FB9E7D250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26098384-D758-4663-8417-DA1D0EEBFF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26098384-D758-4663-8417-DA1D0EEBFF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26098384-D758-4663-8417-DA1D0EEBFF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26098384-D758-4663-8417-DA1D0EEBFF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC674D7-48DD-471D-904F-505D3C3DCB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC674D7-48DD-471D-904F-505D3C3DCB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC674D7-48DD-471D-904F-505D3C3DCB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC674D7-48DD-471D-904F-505D3C3DCB08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
