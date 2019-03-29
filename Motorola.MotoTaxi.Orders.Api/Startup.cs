@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Motorola.MotoTaxi.Orders.Api.Helpers;
 using Motorola.MotoTaxi.Orders.Api.Hubs;
 using Motorola.MotoTaxi.Orders.DbServices;
 using Motorola.MotoTaxi.Orders.FakeServices;
@@ -32,6 +34,10 @@ namespace Motorola.MotoTaxi.Orders.Api
         {
             //services.AddSingleton<IOrderService, FakeOrderService>();
             services.AddScoped<IOrderService, DbOrderService>();
+            services.AddScoped<IUserService ,FakeUserService>();
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
             //services.AddSingleton<OrderFaker>();
 
             string connectionString = Configuration.GetConnectionString("OrdersConnection");
@@ -65,7 +71,8 @@ namespace Motorola.MotoTaxi.Orders.Api
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

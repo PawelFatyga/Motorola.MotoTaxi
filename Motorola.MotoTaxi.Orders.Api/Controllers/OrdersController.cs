@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Motorola.MotoTaxi.Orders.DomainModels;
 using Motorola.MotoTaxi.Orders.IServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Motorola.MotoTaxi.Orders.Api.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService orderService;
@@ -19,12 +22,27 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         }
 
         [HttpGet]
+        //[Authorize(Roles = "Boss")]
+        [AllowAnonymous]
         public IActionResult Get()
         {
-
-            //return Ok("Hello Orders");
+            //string email = this.User.FindFirst(ClaimTypes.Email).Value;
             var list = orderService.Get();
             return Ok(list);
+
+
+            //if (this.User.Identity.IsAuthenticated)
+            //{
+            //    string email = this.User.FindFirst(ClaimTypes.Email).Value;
+
+            //    var list = orderService.Get();
+            //    return Ok(list);
+
+            //}
+            //else
+            //{
+            //    return Unauthorized();
+            //}
         }
 
         [HttpGet]
@@ -39,6 +57,7 @@ namespace Motorola.MotoTaxi.Orders.Api.Controllers
         // api/orders/100
         [HttpGet]
         [Route("{id:int}")]
+        [AllowAnonymous] //tutaj mozemy wylaczyc autentykacje
         public IActionResult Get(int id)
         {
             Order order = orderService.Get(id);
