@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Locations
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.ConsoleReceiver", "Motorola.MotoTaxi.ConsoleReceiver\Motorola.MotoTaxi.ConsoleReceiver.csproj", "{5AE61D63-7231-4652-9D96-00F59A2CF4E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motorola.MotoTaxi.Payment.Api", "Motorola.MotoTaxi.Payment.Api\Motorola.MotoTaxi.Payment.Api.csproj", "{16AD3B4F-A6DD-4ED1-89AE-1EA258C97909}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{5AE61D63-7231-4652-9D96-00F59A2CF4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE61D63-7231-4652-9D96-00F59A2CF4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE61D63-7231-4652-9D96-00F59A2CF4E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16AD3B4F-A6DD-4ED1-89AE-1EA258C97909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AD3B4F-A6DD-4ED1-89AE-1EA258C97909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AD3B4F-A6DD-4ED1-89AE-1EA258C97909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AD3B4F-A6DD-4ED1-89AE-1EA258C97909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
